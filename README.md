@@ -57,8 +57,10 @@ Demo Link: https://welp-project.onrender.com
    ```bash
    flask run
    ```
-
-7. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+7. ```
+   npm install
+      ```
+8. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
 
 Languages used: 
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
