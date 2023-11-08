@@ -65,7 +65,9 @@ Demo Link: https://welp-project.onrender.com
 Languages used: 
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 ![React](https://img.shields.io/badge/React-16-blue)
+We used a react app front end for all the html and css styling for welp.
 ![Python](https://img.shields.io/badge/Python-3.9.4-purple)
+Our backend of Welp is entirely made up of python version 3.9.4
 
 
 
