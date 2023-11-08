@@ -62,7 +62,7 @@ Demo Link: https://welp-project.onrender.com
 
 Languages used: 
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-![[Python](https://img.shields.io/badge/python-3.9.4-purple)]
+![Python] (https://img.shields.io/badge/python-3.9.4-purple)
 
 
 
