@@ -2,7 +2,7 @@
 
 Original Yelp: https://www.yelp.com/
 
-Creators:  [Josh Krienke](https://github.com/JoshOJK) [Stephen Sy](https://github.com/srsy12) [Gino Farfagila](https://github.com/JustAMan22)
+Creators:  [Josh Krienke](https://github.com/JoshOJK), [Stephen Sy](https://github.com/srsy12), [Gino Farfagila](https://github.com/JustAMan22)
 
 Demo Link: https://welp-project.onrender.com
 
