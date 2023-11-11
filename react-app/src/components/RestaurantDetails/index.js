@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 import { loadRestaurantDetails } from "../../store/restaurants";
 import "../RestaurantDetails/RestaurantDetails.css";
-import OpenModalButton from "../OpenModalButton";
+import DetailsModalButton from "../OpenModalButton/indexv4";
 import DeleteForm from "../DeleteConfirmation";
 import DeleteReviewForm from "../DeleteReview";
 import ImagesFormModal from "../GetAllImagesModal";
-import ImagesModalButton from "../OpenModalButton";
+import ImagesModalButton from "../OpenModalButton/indexv3";
 import CreateRestaurantImage from "../createResImagesForm";
 
 function RestaurantDetailsPage() {
@@ -64,11 +64,9 @@ function RestaurantDetailsPage() {
             <div id="restaurant-price">
               {priceFunc} · {restaurant?.category}
             </div>
-            <button id="photo-butt">
-              <ImagesModalButton
-                buttonText="See all photos"
-                modalComponent={<ImagesFormModal images={images} name={restaurant?.name} />} />
-            </button>
+            <ImagesModalButton
+              buttonText="See all photos"
+              modalComponent={<ImagesFormModal images={images} name={restaurant?.name} />} />
           </div>
         </div>
       </div>
@@ -80,11 +78,11 @@ function RestaurantDetailsPage() {
           {sessionUser?.id === restaurant?.owner?.id && (
             <div id="manage-buttons">
               <button onClick={() => history.push(`/restaurants/edit/${restaurant?.id}`)}>Update Restaurant Info</button>
-              <OpenModalButton
+              <DetailsModalButton
                 buttonText="Add Photos"
                 modalComponent={<CreateRestaurantImage restaurantId={restaurant?.id} />}
               />
-              <OpenModalButton
+              <DetailsModalButton
                 buttonText="Delete Restaurant"
                 modalComponent={<DeleteForm restaurantId={restaurant?.id} />}
               />
@@ -101,7 +99,7 @@ function RestaurantDetailsPage() {
             <div id="res-details-rev-info">
               <div id="rev-prof-header">
                 <div id="prof-stars">
-                  <img className='profile-image' src='https://cdn.discordapp.com/attachments/1115823811116400650/1153911006939054180/gayboyjosh.png' alt="profile button"></img>
+                  <span id='profile-icon' class="material-symbols-outlined">person</span>
                   <div id="reviewer-username">
                     {review?.reviewer?.username}
                     <div>{[...Array(review?.stars)].map((_, i) => <span key={i} class="material-symbols-outlined">star_rate</span>)}</div>
@@ -110,7 +108,7 @@ function RestaurantDetailsPage() {
                 {review?.reviewer?.id === sessionUser?.id && (
                   <div id="manage-rev-buttons">
                     <button onClick={() => history.push(`/restaurants/${restaurant?.id}/review/${review?.id}/edit`)}>Update Review</button>
-                    <OpenModalButton
+                    <DetailsModalButton
                       buttonText="Delete Review"
                       modalComponent={<DeleteReviewForm reviewId={review?.id} restaurantId={restaurant?.id} />}
                     />

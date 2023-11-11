@@ -2,32 +2,50 @@
     display: flex;
     flex-direction: column;
     width: 90vw;
-    height: 80vh;
+    height: 75vh;
     border-radius: 10px;
-    background: #151515;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    background: white;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    border: 2px solid black
 }
 
 #modal-res-name {
     display: flex;
     flex-direction: column;
-    padding-top: 1rem;
     padding-bottom: 1rem;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
 }
 
 #modal-img-tile {
-    height: 14rem;
-    width: 14rem;
+    height: 11rem;
+    width: 11rem;
     border-radius: 3px;
-    overflow: scroll;
+    object-fit: cover;
     margin-right: 0.5rem;
+    overflow: scroll;
 }
 
 #imgs-url-container {
     display: flex;
     flex-direction: row;
+}
+
+.img-header-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.img-header-cont button {
+    background: none;
+    color: rgb(107, 185, 240);
+    border: none;
+    height: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
 }

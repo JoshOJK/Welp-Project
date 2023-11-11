@@ -7,28 +7,28 @@
     width: fit-content;
     height: 2rem;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .Register-modal-button {
     background: transparent;
     border: none;
-    color: #ff9600;
+    color: rgb(107, 185, 240);
 }
 
 .Register-modal-button:hover {
     text-decoration: underline;
-    color: #ff9600;
+    color: rgb(107, 185, 240);
 }
 
 .images-button {
-    border: none;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-decoration: none;
-    width: fit-content;
-    height: 2rem;
-    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    background-color: rgb(187, 182, 182);
     border: 1px solid white;
-    border-radius: 3px;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 12rem;
+    height: 3rem;
+    cursor: pointer;
 }
