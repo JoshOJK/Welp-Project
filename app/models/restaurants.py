@@ -21,13 +21,20 @@ class Restaurant(db.Model):
     lat = db.Column(db.Integer, nullable=True)
     lng = db.Column(db.Integer, nullable=True)
 
-    owner = db.relationship('User', back_populates='restaurants')
-    restaurant_images = db.relationship('RestaurantImage', back_populates='restaurant_img', cascade='all, delete-orphan')
-    reviews = db.relationship('Review', back_populates='restaurant', cascade='all, delete-orphan', primaryjoin='Review.restaurant_id==Restaurant.id' )
+    owner = db.relationship("User", back_populates="restaurants")
+    restaurant_images = db.relationship(
+        "RestaurantImage", back_populates="restaurant_img", cascade="all, delete-orphan"
+    )
+    reviews = db.relationship(
+        "Review",
+        back_populates="restaurant",
+        cascade="all, delete-orphan",
+        primaryjoin="Review.restaurant_id==Restaurant.id",
+    )
 
     def to_dict(self):
         reviews_list = [review.to_dict() for review in self.reviews]
-        images_list = [image.to_dict() for  image in self.restaurant_images]
+        images_list = [image.to_dict() for image in self.restaurant_images]
         return {
             "id": self.id,
             "owner_id": self.owner_id,
@@ -44,5 +51,24 @@ class Restaurant(db.Model):
             "lng": self.lng,
             "reviews": reviews_list,
             "images": images_list,
-            "owner": self.owner.to_dict()
+            "owner": self.owner.to_dict(),
+        }
+
+    def no_reviews(self):
+        images_list = [image.to_dict() for image in self.restaurant_images]
+        return {
+            "id": self.id,
+            "owner_id": self.owner_id,
+            "address": self.address,
+            "city": self.city,
+            "state": self.state,
+            "country": self.country,
+            "name": self.name,
+            "price": self.price,
+            "rating": self.rating,
+            "category": self.category,
+            "postalcode": self.postalcode,
+            "lat": self.lat,
+            "lng": self.lng,
+            "images": images_list,
         }

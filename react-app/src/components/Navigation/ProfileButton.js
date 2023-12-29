@@ -102,6 +102,18 @@ function ProfileButton({ user }) {
 									</div>
 									Create a restaurant
 								</NavLink>
+								<NavLink
+									id="create-restaurant-button-dropdown"
+									to="/profile"
+								>
+									<div
+										id="food-symbol-profile-dropdown"
+										className="material-symbols-outlined"
+									>
+										fastfood
+									</div>
+									View my Profile
+								</NavLink>
 							</div>
 						</div>
 						<div className="logout-btn-container-profile-dropdown">

@@ -15,6 +15,7 @@ import UpdateReviewFunc from "./components/UpdateReview";
 import UpdateReviewImgFunc from "./components/UpdateReviewImages";
 import ManageResImgFunc from "./components/UpdateReviewImages";
 import UpdateResImgFunc from "./components/UpdateResImages";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -54,6 +55,9 @@ function App() {
           </Route>
           <Route path="/restaurants/:restaurantId">
             <RestaurantDetailsPage />
+          </Route>
+          <Route path="/profile">
+            <ProfilePage />
           </Route>
           <Route path="/">
             <HomePage />
