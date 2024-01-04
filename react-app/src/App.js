@@ -12,6 +12,10 @@ import CreateRestaurant from "./components/createRestaurantForm";
 import ReviewModal from "./components/ReviewModal";
 import UpdateForm from "./components/updateRestaurant";
 import UpdateReviewFunc from "./components/UpdateReview";
+import UpdateReviewImgFunc from "./components/UpdateReviewImages";
+import ManageResImgFunc from "./components/UpdateReviewImages";
+import UpdateResImgFunc from "./components/UpdateResImages";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +35,9 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+          <Route path="/restaurants/:restaurantId/review/:reviewId/images/edit">
+            <UpdateReviewImgFunc />
+          </Route>
           <Route path="/restaurants/:restaurantId/review/:reviewId/edit">
             <UpdateReviewFunc />
           </Route>
@@ -48,6 +55,9 @@ function App() {
           </Route>
           <Route path="/restaurants/:restaurantId">
             <RestaurantDetailsPage />
+          </Route>
+          <Route path="/profile">
+            <ProfilePage />
           </Route>
           <Route path="/">
             <HomePage />
