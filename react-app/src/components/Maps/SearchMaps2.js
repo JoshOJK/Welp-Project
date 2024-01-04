@@ -18,8 +18,8 @@ const SearchMaps = ({ apiKey, res }) => {
 	const history = useHistory();
 
 	const center = {
-		lat: 39.34906,
-		lng: -101.7229,
+		lat: 34.062,
+		lng: -118.341,
 	};
 
 	const { isLoaded } = useJsApiLoader({
@@ -36,7 +36,7 @@ const SearchMaps = ({ apiKey, res }) => {
 				<GoogleMap
 					mapContainerStyle={containerStyle}
 					center={center}
-					zoom={4}
+					zoom={11.2}
 				>
 					{res?.map((rest, index) => (
 						<React.Fragment key={rest?.id}>

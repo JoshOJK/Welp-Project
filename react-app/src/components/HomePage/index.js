@@ -40,8 +40,13 @@ const HomePage = () => {
 		array.push(reviewArray[id - 1]);
 	});
 
-	let shuffledRestaurants = restaurantArray?.sort(() => 0.5 - Math.random());
-	let arr = shuffledRestaurants?.slice(0, 6);
+	let array2 = [];
+	restaurantId.forEach((id) => {
+		array2.push(restaurantArray[id - 1]);
+	});
+
+	// let shuffledRestaurants = restaurantArray?.sort(() => 0.5 - Math.random());
+	let arr = array2?.slice(0, 6);
 
 	useEffect(() => {
 		dispatch(fetchReviews());
@@ -146,7 +151,15 @@ const HomePage = () => {
 						) : null
 					)}
 				</div>
-				<div id="more-res-btn" onClick={(e) => {e.preventDefault(); history.push("/restaurants/0/0/0")}}>See more restaurants</div>
+				<div
+					id="more-res-btn"
+					onClick={(e) => {
+						e.preventDefault();
+						history.push("/restaurants/0/0/0");
+					}}
+				>
+					See more restaurants
+				</div>
 			</div>
 			<div id="reviews-wrapper">
 				<h2 id="recent-activity-text">Recent Activity</h2>

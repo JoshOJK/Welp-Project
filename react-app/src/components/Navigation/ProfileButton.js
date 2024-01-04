@@ -69,7 +69,7 @@ function ProfileButton({ user }) {
 							<div className="profile-icon-container-dropdown">
 								<i
 									id="profile-icon-dropdown"
-									class="fa-solid fa-user"
+									className="fa-solid fa-user"
 								></i>
 							</div>
 							<div className="hello-user-msg-container">
