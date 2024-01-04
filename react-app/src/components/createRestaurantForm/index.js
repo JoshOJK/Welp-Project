@@ -5,6 +5,7 @@ import {
 	createRestaurant,
 	createRestaurantImage,
 	loadRestaurantDetails,
+	loadRestaurants,
 } from "../../store/restaurants";
 import "./createRestaurant.css";
 import Autocomplete from "react-google-autocomplete";
@@ -118,6 +119,7 @@ const CreateRestaurant = () => {
 						);
 					}
 					await dispatch(loadRestaurantDetails(createdRestaurant.id));
+					await dispatch(loadRestaurants(0, 0, 0));
 					history.push(`/restaurants/${createdRestaurant.id}`);
 				}
 			} catch (error) {
