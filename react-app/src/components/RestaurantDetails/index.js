@@ -189,18 +189,16 @@ function RestaurantDetailsPage() {
 									</span>
 									<div id="reviewer-username">
 										{review?.reviewer?.username}
-										<div>
-											{[...Array(review?.stars)].map(
-												(_, i) => (
-													<span
-														key={i}
-														class="material-symbols-outlined"
-													>
-														star_rate
-													</span>
-												)
-											)}
-										</div>
+										<div id="reviewer-stars">
+                                        {[...Array(review?.stars)].map(
+                                            (_, i) => (
+                                                <i
+                                                    id="review-star-homepage"
+                                                    className="fa-solid fa-star"
+                                                ></i>
+                                            )
+                                        )}
+                                    </div>
 									</div>
 								</div>
 								{review?.reviewer?.id === sessionUser?.id && (
