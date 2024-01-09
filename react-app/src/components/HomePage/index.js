@@ -174,7 +174,7 @@ const HomePage = () => {
 									<div id="profile-header">
 										<span
 											id="prof-picture"
-											class="material-symbols-outlined"
+											className="material-symbols-outlined"
 										>
 											account_circle
 										</span>

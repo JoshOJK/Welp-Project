@@ -1,26 +1,15 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useEffect } from "react";
+// import { useDispatch, useSelector } from "react-redux";
 
-import { getKey } from '../../store/maps';
-import Maps from './Maps';
+// import { getKey } from "../../store/maps";
+import { Maps, GoogleMapsLoader } from "./Maps";
 
-const MapContainer = ({resLat, resLng}) => {
-  const key = useSelector((state) => state.maps.key);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!key) {
-      dispatch(getKey());
-    }
-  }, [dispatch, key]);
-
-  if (!key) {
-    return null;
-  }
-
-  return (
-    <Maps apiKey={key} latty={resLat} lngy={resLng} />
-  );
+const MapContainer = ({ resLat, resLng }) => {
+	return (
+		<GoogleMapsLoader>
+			<Maps latty={resLat} lngy={resLng} />
+		</GoogleMapsLoader>
+	);
 };
 
 export default MapContainer;
