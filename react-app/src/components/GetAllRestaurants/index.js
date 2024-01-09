@@ -9,6 +9,7 @@ function GetAllRestaurantsPage() {
 	const dispatch = useDispatch();
 	let { name, price, category } = useParams();
 	const restaurants = useSelector((state) => state.restaurant);
+	console.log(restaurants);
 
 	useEffect(() => {
 		if (name == 0) {

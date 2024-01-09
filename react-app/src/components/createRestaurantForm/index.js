@@ -108,6 +108,7 @@ const CreateRestaurant = () => {
 					createRestaurant(safeSpot)
 				);
 				if (createdRestaurant) {
+					console.log(createRestaurant);
 					if (image) {
 						const formData = new FormData();
 						formData.append("url", image);
