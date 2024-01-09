@@ -20,7 +20,7 @@ function CreateRestaurantImage({ restaurantId }) {
         console.log(images)
 
         const errors = {};
-        // if (images.length > 0) {
+        // if (images?.length > 0) {
         //     if (!images[0].match(/\.(png|jpe?g)$/) || !images[0]) {
         //         errors.images = "Image URL must end in .png, .jpg, or .jpeg!";
         //     }
