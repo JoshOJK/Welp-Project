@@ -18,8 +18,8 @@ class Restaurant(db.Model):
     rating = db.Column(db.Integer, nullable=True)
     category = db.Column(db.String, nullable=False)
     postalcode = db.Column(db.Integer, nullable=False)
-    lat = db.Column(db.Integer, nullable=True)
-    lng = db.Column(db.Integer, nullable=True)
+    lat = db.Column(db.Float, nullable=True)
+    lng = db.Column(db.Float, nullable=True)
 
     owner = db.relationship("User", back_populates="restaurants")
     restaurant_images = db.relationship(
