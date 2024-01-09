@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, NavLink, Switch, useHistory } from "react-router-dom";
-import reviewReducer, { fetchReviews } from "../../store/reviews";
+import { NavLink, useHistory } from "react-router-dom";
+import { fetchReviews } from "../../store/reviews";
 import { loadRestaurants } from "../../store/restaurants";
-import { Route } from "react-router-dom/cjs/react-router-dom.min";
 import "./HomePage.css";
 
 const HomePage = () => {
