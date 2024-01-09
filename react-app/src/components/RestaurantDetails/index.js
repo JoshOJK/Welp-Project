@@ -185,10 +185,10 @@ function RestaurantDetailsPage() {
 							<div id="rev-prof-header">
 								<div id="prof-stars">
 									<span
-										id="profile-icon"
+										id="profile-icon-2"
 										className="material-symbols-outlined"
 									>
-										person
+										account_circle
 									</span>
 									<div id="reviewer-username">
 										{review?.reviewer?.username}

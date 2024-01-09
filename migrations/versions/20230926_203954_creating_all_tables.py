@@ -48,8 +48,8 @@ def upgrade():
     sa.Column('rating', sa.Integer(), nullable=True),
     sa.Column('category', sa.String(), nullable=False),
     sa.Column('postalcode', sa.Integer(), nullable=False),
-    sa.Column("lat", sa.Integer(), nullable=True),
-    sa.Column("lng", sa.Integer(), nullable=True),
+    sa.Column("lat", sa.Float(), nullable=True),
+    sa.Column("lng", sa.Float(), nullable=True),
     sa.ForeignKeyConstraint(['owner_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
