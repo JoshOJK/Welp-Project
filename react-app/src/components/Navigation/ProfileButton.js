@@ -60,7 +60,7 @@ function ProfileButton({ user }) {
 	return (
 		<div>
 			<button className="profile-button" onClick={setActiveClass}>
-				<i id="profile-icon" class="fa-solid fa-user"></i>
+				<i id="profile-icon" className="fa-solid fa-user"></i>
 			</button>
 			<ul className="profile-dropdown hidden" ref={ulRef}>
 				{user ? (

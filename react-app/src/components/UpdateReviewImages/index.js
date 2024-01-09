@@ -26,7 +26,7 @@ function UpdateReviewImgFunc() {
 
 	useEffect(() => {
 		dispatch(fetchReviews());
-		if (currentReview?.images.length > 0) {
+		if (currentReview?.images?.length > 0) {
 			setUrl(currentReview?.images[0].url);
 		}
 	}, [dispatch]);
@@ -117,7 +117,7 @@ function UpdateReviewImgFunc() {
 			>
 				<div className="images-master-parent">
 					<div className="form-row-images">
-						{currentReview?.images.length > 0 && (
+						{currentReview?.images?.length > 0 && (
 							<div className="review-url-container">
 								<div className="current-img-container-update-img">
 									<div id="current-img-txt">
@@ -165,7 +165,7 @@ function UpdateReviewImgFunc() {
 							</div>
 						)}
 					</div>
-					{currentReview?.images.length === 0 && (
+					{currentReview?.images?.length === 0 && (
 						<div className="review-url-container">
 							{displayImage && (
 								<div className="current-img-container-update-img">
@@ -221,7 +221,7 @@ function UpdateReviewImgFunc() {
 						>
 							Update Image
 						</button>
-						{currentReview?.images.length > 0 && (
+						{currentReview?.images?.length > 0 && (
 							<div className="delete-update-img-btn-container">
 								<DetailsModalButton
 									type="button"
