@@ -19,7 +19,7 @@
 
 #modal-img-tile {
     height: 11rem;
-    width: 11rem;
+    width: 13rem;
     border-radius: 3px;
     object-fit: cover;
     margin-right: 0.5rem;
@@ -48,4 +48,5 @@
     height: 2rem;
     font-size: 2rem;
     font-weight: bold;
+    cursor: pointer;
 }

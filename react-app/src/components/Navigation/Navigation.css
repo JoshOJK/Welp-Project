@@ -352,6 +352,11 @@ option:hover {
 	border-bottom: 1px solid rgb(107, 185, 240);
 }
 
+.date-nav {
+
+margin: 0 0.2rem 0 0;
+}
+
 .date-time-only {
 	display: flex;
 	margin: 0 0 0.2rem 0;
@@ -366,6 +371,13 @@ option:hover {
 	display: flex;
 	align-items: center;
 	font-size: 1rem;
+	margin: 0 0.2rem 0 0;
+}
+
+#settings-symbol-profile-dropdown {
+	display: flex;
+	align-items: center;
+	font-size: 1.4rem;
 	margin: 0 0.2rem 0 0;
 }
 

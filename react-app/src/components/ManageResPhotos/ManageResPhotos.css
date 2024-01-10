@@ -1,0 +1,39 @@
+.update-res-imgs-btns-container {
+	display: flex;
+	justify-content: space-between;
+	width: 13rem;
+}
+
+#imgs-url-container {
+	display: flex;
+}
+
+.update-delete-res-img-modal-btns button {
+	background-color: rgb(107, 185, 240);
+	border-radius: 0.3rem;
+	color: white;
+	transition: 0.5s ease;
+}
+
+.update-delete-res-img-modal-btns button:hover {
+	box-shadow: 0.5px 0.5px #373737, 1px 1px #373737, 2px 2px #373737,
+		3px 3px #373737;
+	-webkit-transform: translateX(-3px);
+	transform: translateX(-3px);
+	background-color: rgb(114, 196, 255);
+}
+
+.update-delete-res-img-modal-btns2 button:hover {
+	box-shadow: 0.5px 0.5px #373737, 1px 1px #373737, 2px 2px #373737,
+		3px 3px #373737;
+	-webkit-transform: translateX(-3px);
+	transform: translateX(-3px);
+	background-color: rgb(240, 107, 107);
+}
+
+.update-delete-res-img-modal-btns2 button {
+	background-color: rgb(107, 185, 240);
+	border-radius: 0.3rem;
+	color: white;
+	transition: 0.5s ease;
+}

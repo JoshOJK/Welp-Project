@@ -56,7 +56,6 @@
 		3px 3px #373737;
 	-webkit-transform: translateX(-3px);
 	transform: translateX(-3px);
-	transition: 0.5s ease;
 	background-color: rgb(240, 107, 107);
 }
 

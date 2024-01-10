@@ -91,7 +91,7 @@ function UpdateResImgFunc({ restaurantId, resImage }) {
 							Choose a new image
 						</div>
 						<label className="create-image-label">
-							<div className="upload-img-icon-container">
+							<div className="upload-img-icon-container2">
 								<div
 									id="upload-image-icon"
 									className="material-symbols-outlined"
@@ -126,7 +126,7 @@ function UpdateResImgFunc({ restaurantId, resImage }) {
 					<div className="update-img-btn-styler-container">
 						<button
 							type="submit"
-							id="update-review-image-button"
+							className="update-review-image-button"
 							disabled={submitted}
 						>
 							Update Image
