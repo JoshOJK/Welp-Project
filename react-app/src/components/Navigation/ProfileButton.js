@@ -106,12 +106,12 @@ function ProfileButton({ user }) {
 									id="create-restaurant-button-dropdown"
 									to="/profile"
 								>
-									<div
-										id="food-symbol-profile-dropdown"
+									<span
 										className="material-symbols-outlined"
+										id="settings-symbol-profile-dropdown"
 									>
-										fastfood
-									</div>
+										manage_accounts
+									</span>
 									View my Profile
 								</NavLink>
 							</div>
@@ -127,7 +127,7 @@ function ProfileButton({ user }) {
 					</div>
 				) : (
 					<div className="login-signup-buttons">
-            <div id="welcome-text">👋 Welcome.</div>
+						<div id="welcome-text">👋 Welcome.</div>
 						<div className="profile-dropdown-login-out-btns">
 							<OpenModalButton
 								className="login-button"
