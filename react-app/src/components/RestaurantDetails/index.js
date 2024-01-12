@@ -18,7 +18,6 @@ function RestaurantDetailsPage() {
 	const { restaurantId } = useParams();
 	const restaurant = useSelector((state) => state?.restaurant[restaurantId]);
 	const sessionUser = useSelector((state) => state?.session.user);
-	console.log(restaurant);
 
 	useEffect(() => {
 		dispatch(loadRestaurantDetails(restaurantId));

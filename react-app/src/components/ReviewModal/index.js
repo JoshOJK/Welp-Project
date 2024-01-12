@@ -45,7 +45,6 @@ function ReviewModal() {
 				const createdReview = await dispatch(
 					createReview(restaurantId, reviewDatas)
 				);
-				console.log(createdReview);
 				if (createdReview) {
 					const reviewId = createdReview.id;
 					const formData = new FormData();

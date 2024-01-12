@@ -9,7 +9,6 @@ function GetAllRestaurantsPage() {
 	const dispatch = useDispatch();
 	let { name, price, category } = useParams();
 	const restaurants = useSelector((state) => state.restaurant);
-	console.log(restaurants);
 
 	useEffect(() => {
 		if (name == 0) {
@@ -22,7 +21,6 @@ function GetAllRestaurantsPage() {
 		dispatch(loadRestaurants(name, price, category));
 	}, [dispatch, name, price, category]);
 
-	//console.log(Object.values(restaurants))
 	const restaurantsLooper = Object.values(restaurants);
 
 	let priceFunc;

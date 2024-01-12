@@ -10,8 +10,6 @@ function ProfilePage() {
 	const restaurantsObj = useSelector((state) => state?.restaurant);
 	const sessionUser = useSelector((state) => state?.session.user);
 
-	console.log(restaurantsObj);
-
 	useEffect(() => {
 		dispatch(loadRestaurants(0, 0, 0));
 	}, [dispatch]);
