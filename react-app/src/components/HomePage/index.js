@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, NavLink, Switch, useHistory } from "react-router-dom";
-import reviewReducer, { fetchReviews } from "../../store/reviews";
+import { NavLink, useHistory } from "react-router-dom";
+import { fetchReviews } from "../../store/reviews";
 import { loadRestaurants } from "../../store/restaurants";
-import { Route } from "react-router-dom/cjs/react-router-dom.min";
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -40,8 +39,13 @@ const HomePage = () => {
 		array.push(reviewArray[id - 1]);
 	});
 
-	let shuffledRestaurants = restaurantArray?.sort(() => 0.5 - Math.random());
-	let arr = shuffledRestaurants?.slice(0, 6);
+	let array2 = [];
+	restaurantId.forEach((id) => {
+		array2.push(restaurantArray[id - 1]);
+	});
+
+	// let shuffledRestaurants = restaurantArray?.sort(() => 0.5 - Math.random());
+	let arr = array2?.slice(0, 6);
 
 	useEffect(() => {
 		dispatch(fetchReviews());
@@ -98,55 +102,65 @@ const HomePage = () => {
 											<div id="rec-res-name">
 												{restaurant?.name.length >= 21
 													? restaurant.name.slice(
-															0,
-															21
-													  ) + "..."
+														0,
+														21
+													) + "..."
 													: restaurant?.name}
 											</div>
 										</NavLink>
 										<div>
 											{
 												recommendationTexts[
-													Math.floor(
-														Math.random() *
-															recommendationTexts.length
-													)
+												Math.floor(
+													Math.random() *
+													recommendationTexts.length
+												)
 												]
 											}
 										</div>
-										<NavLink
-											id="rec-rating-navlink"
-											to={`/restaurants/${restaurant?.id}/new-review`}
-										>
-											<div className="stars-rec">
-												{[5, 4, 3, 2, 1].map((star) => (
-													<div
-														key={star}
-														className={`star-rec ${
-															star <= stars
-																? "filled-rec"
-																: ""
-														}`}
-														onClick={() =>
-															setStars(star)
-														}
-														title={getTooltip(star)}
-													>
-														<i
-															id="review-star-homepage-rec"
-															className="fa-solid fa-star"
-														></i>
-													</div>
-												))}
-											</div>
-										</NavLink>
+										{sessionUser && (
+											<NavLink
+												id="rec-rating-navlink"
+												to={`/restaurants/${restaurant?.id}/new-review`}
+											>
+												<div className="stars-rec">
+													{[5, 4, 3, 2, 1].map((star) => (
+														<div
+															key={star}
+															className={`star-rec ${star <= stars
+																	? "filled-rec"
+																	: ""
+																}`}
+															onClick={() =>
+																setStars(star)
+															}
+															title={getTooltip(star)}
+														>
+															<i
+																id="review-star-homepage-rec"
+																className="fa-solid fa-star"
+															></i>
+														</div>
+													))}
+												</div>
+											</NavLink>
+
+										)}
 									</div>
 								</div>
 							</div>
 						) : null
 					)}
 				</div>
-				<div id="more-res-btn" onClick={(e) => {e.preventDefault(); history.push("/restaurants/0/0/0")}}>See more restaurants</div>
+				<div
+					id="more-res-btn"
+					onClick={(e) => {
+						e.preventDefault();
+						history.push("/restaurants/0/0/0");
+					}}
+				>
+					See more restaurants
+				</div>
 			</div>
 			<div id="reviews-wrapper">
 				<h2 id="recent-activity-text">Recent Activity</h2>
@@ -161,7 +175,7 @@ const HomePage = () => {
 									<div id="profile-header">
 										<span
 											id="prof-picture"
-											class="material-symbols-outlined"
+											className="material-symbols-outlined"
 										>
 											account_circle
 										</span>
@@ -184,7 +198,7 @@ const HomePage = () => {
 									))}
 									{restaurantArray?.map((restaurant) =>
 										restaurant?.id ===
-										review?.restaurant_id ? (
+											review?.restaurant_id ? (
 											<div
 												id="rst-name-in-review"
 												key={restaurant?.id}

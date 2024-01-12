@@ -21,7 +21,6 @@ function GetAllRestaurantsPage() {
 		dispatch(loadRestaurants(name, price, category));
 	}, [dispatch, name, price, category]);
 
-	//console.log(Object.values(restaurants))
 	const restaurantsLooper = Object.values(restaurants);
 
 	let priceFunc;

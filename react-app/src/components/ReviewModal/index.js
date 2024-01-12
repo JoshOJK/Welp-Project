@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { createReview } from "../../store/reviews";
 import { createReviewImage } from "../../store/reviews";
@@ -45,7 +45,6 @@ function ReviewModal() {
 				const createdReview = await dispatch(
 					createReview(restaurantId, reviewDatas)
 				);
-				console.log(createdReview);
 				if (createdReview) {
 					const reviewId = createdReview.id;
 					const formData = new FormData();

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "../../store/session";
 import OpenModalButton from "../OpenModalButton";
@@ -10,6 +10,7 @@ import "./Navigation.css";
 function ProfileButton({ user }) {
 	const dispatch = useDispatch();
 	const ulRef = useRef();
+	const history = useHistory()
 
 	const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
@@ -40,9 +41,8 @@ function ProfileButton({ user }) {
 		const amOrPm = hours >= 12 ? "PM" : "AM";
 		const formattedHours = hours % 12 || 12;
 
-		return `${formattedHours}:${minutes < 10 ? "0" : ""}${minutes}:${
-			seconds < 10 ? "0" : ""
-		}${seconds} ${amOrPm}`;
+		return `${formattedHours}:${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""
+			}${seconds} ${amOrPm}`;
 	}
 
 	function setActiveClass(e) {
@@ -54,13 +54,14 @@ function ProfileButton({ user }) {
 
 	const handleLogout = (e) => {
 		e.preventDefault();
+		history.push("/")
 		dispatch(logout());
 	};
 
 	return (
 		<div>
 			<button className="profile-button" onClick={setActiveClass}>
-				<i id="profile-icon" class="fa-solid fa-user"></i>
+				<i id="profile-icon" className="fa-solid fa-user"></i>
 			</button>
 			<ul className="profile-dropdown hidden" ref={ulRef}>
 				{user ? (
@@ -69,7 +70,7 @@ function ProfileButton({ user }) {
 							<div className="profile-icon-container-dropdown">
 								<i
 									id="profile-icon-dropdown"
-									class="fa-solid fa-user"
+									className="fa-solid fa-user"
 								></i>
 							</div>
 							<div className="hello-user-msg-container">
@@ -106,12 +107,12 @@ function ProfileButton({ user }) {
 									id="create-restaurant-button-dropdown"
 									to="/profile"
 								>
-									<div
-										id="food-symbol-profile-dropdown"
+									<span
 										className="material-symbols-outlined"
+										id="settings-symbol-profile-dropdown"
 									>
-										fastfood
-									</div>
+										manage_accounts
+									</span>
 									View my Profile
 								</NavLink>
 							</div>
@@ -127,7 +128,7 @@ function ProfileButton({ user }) {
 					</div>
 				) : (
 					<div className="login-signup-buttons">
-            <div id="welcome-text">👋 Welcome.</div>
+						<div id="welcome-text">👋 Welcome.</div>
 						<div className="profile-dropdown-login-out-btns">
 							<OpenModalButton
 								className="login-button"

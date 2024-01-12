@@ -7,7 +7,7 @@
 	position: absolute;
 	left: 87%;
 	background: white;
-	height: 15rem;
+	height: 16rem;
 	width: 15rem;
 	border-radius: 0.3rem;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -59,7 +59,7 @@
 	background-color: rgb(107, 185, 240);
 	transition: 0.5s ease;
 	cursor: pointer;
-	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	/* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
 .profile-dropdown-login-out-btns button:hover {
@@ -75,7 +75,7 @@
 	background-color: rgb(107, 185, 240);
 	transition: 0.5s ease;
 	cursor: pointer;
-	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	/* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 	margin: 1rem 0 0 0;
 }
 
@@ -352,6 +352,11 @@ option:hover {
 	border-bottom: 1px solid rgb(107, 185, 240);
 }
 
+.date-nav {
+
+	margin: 0 0.2rem 0 0;
+}
+
 .date-time-only {
 	display: flex;
 	margin: 0 0 0.2rem 0;
@@ -366,6 +371,13 @@ option:hover {
 	display: flex;
 	align-items: center;
 	font-size: 1rem;
+	margin: 0 0.2rem 0 0;
+}
+
+#settings-symbol-profile-dropdown {
+	display: flex;
+	align-items: center;
+	font-size: 1.4rem;
 	margin: 0 0.2rem 0 0;
 }
 
@@ -402,21 +414,26 @@ option:hover {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		justify-content: space-between;
 		background: transparent;
-		padding: 10px 20px;
-		border-radius: 30px;
-		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 		height: 1.5rem;
 		align-self: center;
 	}
+
 	.genre-input-1 {
 		display: none;
 	}
+
 	.price-input-1 {
 		display: none;
 	}
 
 	#combo-box-demo {
 		width: 9rem;
+	}
+
+	.search-bar-div-container {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
 	}
 }

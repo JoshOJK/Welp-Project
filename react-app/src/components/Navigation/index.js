@@ -147,7 +147,7 @@ function Navigation({ isLoaded }) {
 							<div className="search-btn-container">
 								<button
 									type="submit"
-									class="search-submit-button"
+									className="search-submit-button"
 								>
 									<i className="fa fa-search"></i>
 								</button>

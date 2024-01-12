@@ -185,7 +185,6 @@ input:focus {
 		3px 3px #373737;
 	-webkit-transform: translateX(-3px);
 	transform: translateX(-3px);
-	transition: 0.5s ease;
 }
 
 .create-review-error-div {

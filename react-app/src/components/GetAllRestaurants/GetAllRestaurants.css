@@ -17,7 +17,7 @@
 	overflow-y: scroll;
 	overflow-x: hidden;
 	height: 50.7rem;
-	width: 54rem;
+	width: 50vw;
 }
 
 .res-detail-body::-webkit-scrollbar {
@@ -190,7 +190,7 @@
 }
 
 .goggle-maps {
-	width: 62rem;
+	width: 50vw;
 	display: flex;
 	font-size: 10rem;
 	/* height: 52.6rem; */
@@ -251,7 +251,7 @@
 #marker-rest-rating {
 	display: flex;
 	align-items: center;
-	font-size: .85rem;
+	font-size: 0.85rem;
 	font-weight: 500;
 }
 
@@ -281,4 +281,26 @@
 .marker-star-rating-both {
 	display: flex;
 	align-items: center;
+}
+
+@media screen and (max-width: 1700px) {
+	.goggle-maps {
+		width: 40vw;
+	}
+
+	.res-detail-body {
+		width: 55vw;
+	}
+}
+
+@media screen and (max-width: 1160px) {
+
+	.goggle-maps {
+		display: none;
+	}
+
+	.res-detail-body {
+		width: 100vw;
+		height: 91vh;
+	}
 }

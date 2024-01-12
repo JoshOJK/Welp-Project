@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, NavLink, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { loadRestaurantDetails } from "../../store/restaurants";
 import "../RestaurantDetails/RestaurantDetails.css";
 import DetailsModalButton from "../OpenModalButton/indexv4";
@@ -10,7 +10,6 @@ import ImagesFormModal from "../GetAllImagesModal";
 import ImagesModalButton from "../OpenModalButton/indexv3";
 import CreateRestaurantImage from "../createResImagesForm";
 import UpdateResImgFunc from "../ManageResPhotos";
-import Maps from "../Maps/Maps";
 import MapContainer from "../Maps/index";
 
 function RestaurantDetailsPage() {
@@ -19,8 +18,6 @@ function RestaurantDetailsPage() {
 	const { restaurantId } = useParams();
 	const restaurant = useSelector((state) => state?.restaurant[restaurantId]);
 	const sessionUser = useSelector((state) => state?.session.user);
-	console.log("THIS IS FROM THE RES!", restaurant?.lat, restaurant?.lng)
-	console.log("THIS IS ACTUAL RESTAURANT!", restaurant)
 
 	useEffect(() => {
 		dispatch(loadRestaurantDetails(restaurantId));
@@ -29,17 +26,17 @@ function RestaurantDetailsPage() {
 	const images = [];
 	const resImages = [];
 
-	if (restaurant?.images.length) {
-		restaurant?.images.forEach((image) => {
-			images.push(image.url);
-			resImages.push(image)
+	if (restaurant?.images?.length) {
+		restaurant?.images?.forEach((image) => {
+			images?.push(image?.url);
+			resImages.push(image);
 		});
 	}
-	if (restaurant?.reviews.length) {
-		restaurant?.reviews.forEach((review) => {
-			if (review?.images.length) {
-				review?.images.forEach((image) => {
-					images.push(image.url);
+	if (restaurant?.reviews?.length) {
+		restaurant?.reviews?.forEach((review) => {
+			if (review?.images?.length) {
+				review?.images?.forEach((image) => {
+					images?.push(image?.url);
 				});
 			}
 		});
@@ -60,7 +57,7 @@ function RestaurantDetailsPage() {
 	return (
 		<div className="detail-body">
 			<div id="res-img">
-				{restaurant?.images.length > 0 && (
+				{restaurant?.images?.length > 0 && (
 					<img
 						className="img-tile"
 						src={restaurant?.images[0]?.url}
@@ -150,7 +147,11 @@ function RestaurantDetailsPage() {
 							<DetailsModalButton
 								buttonText="Manage Restaurant Photos"
 								modalComponent={
-									<UpdateResImgFunc resImages={resImages} name={restaurant?.name} restaurantId={restaurantId} />
+									<UpdateResImgFunc
+										resImages={resImages}
+										name={restaurant?.name}
+										restaurantId={restaurantId}
+									/>
 								}
 							/>
 							<DetailsModalButton
@@ -170,7 +171,7 @@ function RestaurantDetailsPage() {
 						</div>
 					</div>
 				</div>
-				<div>
+				<div className="res-details-map-container">
 					<MapContainer
 						resLat={restaurant?.lat}
 						resLng={restaurant?.lng}
@@ -179,27 +180,28 @@ function RestaurantDetailsPage() {
 				<div id="all-da-reviews">
 					<div id="rec-review-text">Recommended Reviews</div>
 					{restaurant?.reviews?.map((review) => (
-						<div id="res-details-rev-info">
+						<div id="res-details-rev-info" key={review?.id}>
 							<div id="rev-prof-header">
 								<div id="prof-stars">
 									<span
-										id="profile-icon"
-										class="material-symbols-outlined"
+										id="profile-icon-2"
+										className="material-symbols-outlined"
 									>
-										person
+										account_circle
 									</span>
 									<div id="reviewer-username">
 										{review?.reviewer?.username}
 										<div id="reviewer-stars">
-                                        {[...Array(review?.stars)].map(
-                                            (_, i) => (
-                                                <i
-                                                    id="review-star-homepage"
-                                                    className="fa-solid fa-star"
-                                                ></i>
-                                            )
-                                        )}
-                                    </div>
+											{[...Array(review?.stars)].map(
+												(_, i) => (
+													<i
+														key={i}
+														id="review-star-homepage"
+														className="fa-solid fa-star"
+													></i>
+												)
+											)}
+										</div>
 									</div>
 								</div>
 								{review?.reviewer?.id === sessionUser?.id && (
@@ -218,7 +220,8 @@ function RestaurantDetailsPage() {
 												history.push(
 													`/restaurants/${restaurant?.id}/review/${review?.id}/images/edit`
 												)
-											}>
+											}
+										>
 											Manage Photos
 										</button>
 										<DetailsModalButton
@@ -236,10 +239,10 @@ function RestaurantDetailsPage() {
 								)}
 							</div>
 							<div id="details-review-text">{review?.review}</div>
-							{review?.images.length > 0 && (
+							{review?.images?.length > 0 && (
 								<div id="rev-imgs-container">
 									{review.images.map((image) => (
-										<img src={image.url} />
+										<img key={image?.id} src={image.url} />
 									))}
 								</div>
 							)}

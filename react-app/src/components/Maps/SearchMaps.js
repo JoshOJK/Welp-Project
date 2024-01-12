@@ -1,24 +1,15 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import { useEffect } from "react";
+// import { useDispatch, useSelector } from "react-redux";
 
-import { getKey } from "../../store/maps";
-import SearchMaps from "./SearchMaps2";
+// import { getKey } from "../../store/maps";
+import { SearchMaps, GoogleMapsLoader } from "./Maps";
 
 const SearchMapContainer = ({ restaurants }) => {
-	const key = useSelector((state) => state.maps.key);
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		if (!key) {
-			dispatch(getKey());
-		}
-	}, [dispatch, key]);
-
-	if (!key) {
-		return null;
-	}
-
-	return <SearchMaps apiKey={key} res={restaurants} />;
+	return (
+		<GoogleMapsLoader>
+			<SearchMaps res={restaurants} />
+		</GoogleMapsLoader>
+	);
 };
 
 export default SearchMapContainer;

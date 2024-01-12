@@ -43,9 +43,9 @@
 	background-color: transparent;
 	display: flex;
 	flex-direction: column;
-    justify-content: flex-end;
+	justify-content: flex-end;
 	width: 75%;
-    height: 35rem;
+	height: 35rem;
 }
 
 #res-details {
@@ -105,7 +105,7 @@
 
 #option-buttons button:hover {
 	background-color: rgb(34, 163, 255);
-	transition: ease-in-out .5s;
+	transition: ease-in-out 0.5s;
 }
 
 #option-buttons {
@@ -145,7 +145,7 @@
 
 #reviewer-username {
 	font-weight: bold;
-	margin-left: .5rem;
+	margin-left: 0.5rem;
 }
 
 #prof-stars {
@@ -162,13 +162,13 @@
 }
 
 #manage-rev-buttons button {
-	font-size: .8rem;
+	font-size: 0.8rem;
 	height: 3rem;
 	width: fit-content;
 	padding: 0.5rem;
 	color: white;
 	background-color: rgb(107, 185, 240);
-	margin: .5rem;
+	margin: 0.5rem;
 	border-radius: 3px;
 	cursor: pointer;
 	border: none;
@@ -177,7 +177,7 @@
 
 #manage-rev-buttons button:hover {
 	background-color: rgb(34, 163, 255);
-	transition: ease-in-out .5s;
+	transition: ease-in-out 0.5s;
 }
 
 #details-review-text {
@@ -188,6 +188,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
+	margin: 0 0 1rem 0;
 }
 
 #rev-imgs-container img {
@@ -197,10 +198,12 @@
 	border-radius: 5px;
 }
 
-#prof-stars #profile-icon {
-	font-size: 2.5rem;
+#profile-icon-2 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 3.3rem;
 	color: rgb(107, 185, 240);
-	border: 2px solid black;
 	border-radius: 1.5rem;
 }
 
@@ -237,4 +240,15 @@
 
 #num-reviews-text-detail {
 	color: white;
+}
+
+/* .res-details-map-container {
+	width: 100rem;
+	border: 1px solid red;
+} */
+
+@media screen and (max-width: 1025px) {
+	.res-details-map-container div {
+		width: 10vw;
+	}
 }
