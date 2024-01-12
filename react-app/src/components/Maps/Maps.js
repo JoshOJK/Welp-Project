@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getKey } from "../../store/maps";
@@ -36,13 +36,14 @@ const GoogleMapsLoader = ({ children }) => {
 };
 
 const containerStyle = {
-	width: "83.3rem",
+	width: "69.4vw",
 	height: "25rem",
+	borderRadius: "0.3rem",
 };
 
 const containerStyle2 = {
 	width: "83.3rem",
-	height: "49rem",
+	height: "47.8rem",
 	borderRadius: "0.3rem",
 };
 

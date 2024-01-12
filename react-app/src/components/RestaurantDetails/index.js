@@ -172,7 +172,7 @@ function RestaurantDetailsPage() {
 						</div>
 					</div>
 				</div>
-				<div>
+				<div className="res-details-map-container">
 					<MapContainer
 						resLat={restaurant?.lat}
 						resLng={restaurant?.lng}
