@@ -102,48 +102,50 @@ const HomePage = () => {
 											<div id="rec-res-name">
 												{restaurant?.name.length >= 21
 													? restaurant.name.slice(
-															0,
-															21
-													  ) + "..."
+														0,
+														21
+													) + "..."
 													: restaurant?.name}
 											</div>
 										</NavLink>
 										<div>
 											{
 												recommendationTexts[
-													Math.floor(
-														Math.random() *
-															recommendationTexts.length
-													)
+												Math.floor(
+													Math.random() *
+													recommendationTexts.length
+												)
 												]
 											}
 										</div>
-										<NavLink
-											id="rec-rating-navlink"
-											to={`/restaurants/${restaurant?.id}/new-review`}
-										>
-											<div className="stars-rec">
-												{[5, 4, 3, 2, 1].map((star) => (
-													<div
-														key={star}
-														className={`star-rec ${
-															star <= stars
-																? "filled-rec"
-																: ""
-														}`}
-														onClick={() =>
-															setStars(star)
-														}
-														title={getTooltip(star)}
-													>
-														<i
-															id="review-star-homepage-rec"
-															className="fa-solid fa-star"
-														></i>
-													</div>
-												))}
-											</div>
-										</NavLink>
+										{sessionUser && (
+											<NavLink
+												id="rec-rating-navlink"
+												to={`/restaurants/${restaurant?.id}/new-review`}
+											>
+												<div className="stars-rec">
+													{[5, 4, 3, 2, 1].map((star) => (
+														<div
+															key={star}
+															className={`star-rec ${star <= stars
+																	? "filled-rec"
+																	: ""
+																}`}
+															onClick={() =>
+																setStars(star)
+															}
+															title={getTooltip(star)}
+														>
+															<i
+																id="review-star-homepage-rec"
+																className="fa-solid fa-star"
+															></i>
+														</div>
+													))}
+												</div>
+											</NavLink>
+
+										)}
 									</div>
 								</div>
 							</div>
@@ -196,7 +198,7 @@ const HomePage = () => {
 									))}
 									{restaurantArray?.map((restaurant) =>
 										restaurant?.id ===
-										review?.restaurant_id ? (
+											review?.restaurant_id ? (
 											<div
 												id="rst-name-in-review"
 												key={restaurant?.id}
