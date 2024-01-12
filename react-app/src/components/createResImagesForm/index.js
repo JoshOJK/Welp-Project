@@ -17,7 +17,6 @@ function CreateRestaurantImage({ restaurantId }) {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log(images);
 
 		const errors = {};
 		// if (images?.length > 0) {

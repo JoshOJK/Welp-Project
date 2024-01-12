@@ -23,7 +23,6 @@ function UpdateResImgFunc({ restaurantId, resImage }) {
 	const [changed, setChanged] = useState(false);
 	const { closeModal } = useModal();
 
-	console.log(restaurantId, resImage);
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
