@@ -354,7 +354,7 @@ option:hover {
 
 .date-nav {
 
-margin: 0 0.2rem 0 0;
+	margin: 0 0.2rem 0 0;
 }
 
 .date-time-only {
@@ -414,21 +414,26 @@ margin: 0 0.2rem 0 0;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		justify-content: space-between;
 		background: transparent;
-		padding: 10px 20px;
-		border-radius: 30px;
-		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 		height: 1.5rem;
 		align-self: center;
 	}
+
 	.genre-input-1 {
 		display: none;
 	}
+
 	.price-input-1 {
 		display: none;
 	}
 
 	#combo-box-demo {
 		width: 9rem;
+	}
+
+	.search-bar-div-container {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
 	}
 }
