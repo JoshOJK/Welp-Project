@@ -10,8 +10,6 @@ function ProfilePage() {
 	const restaurantsObj = useSelector((state) => state?.restaurant);
 	const sessionUser = useSelector((state) => state?.session.user);
 
-	console.log(restaurantsObj);
-
 	useEffect(() => {
 		dispatch(loadRestaurants(0, 0, 0));
 	}, [dispatch]);
@@ -265,6 +263,75 @@ function ProfilePage() {
 					))}
 				</div>
 			</div>
+			<div id="footer">
+					<h1 id="footer-title">Creators</h1>
+					<div id="footer-wrapper">
+					<div id="gino-footer">
+						<div id="link-wrapper">
+						<a target="_blank" href="https://github.com/JustAMan22">
+            				<div className="footer-button">
+                				<div className="github-icon">
+                					<i class="fa fa-github"></i>
+                				</div>
+
+            				</div>
+            			</a>
+						<a target="_blank" href="https://www.linkedin.com/in/gino-farfaglia-5513b9186/">
+            				<div className="footer-button">
+                				<div className="linkedin-icon">
+                					<i class="fa fa-linkedin-square"></i>
+                				</div>
+
+            				</div>
+            			</a>
+						</div>
+						<p>Gino Farfaglia</p>
+					</div>
+					<div id="josh-footer">
+					<div id="link-wrapper">
+						<a target="_blank" href="https://github.com/JoshOJK">
+
+            				<div className="footer-button">
+                				<div className="github-icon">
+                					<i class="fa fa-github"></i>
+                				</div>
+
+            				</div>
+            			</a>
+						<a target="_blank" href="https://www.linkedin.com/in/joshuajk/">
+            				<div className="footer-button">
+                				<div className="linkedin-icon">
+                					<i class="fa fa-linkedin-square"></i>
+                				</div>
+
+            				</div>
+            			</a>
+						</div>
+						<p>Josh Krienke</p>
+					</div>
+					<div id="stephen-footer">
+					<div id="link-wrapper">
+					<a target="_blank" href="https://github.com/srsy12">
+            				<div className="footer-button">
+                				<div className="github-icon">
+                					<i class="fa fa-github"></i>
+                				</div>
+
+            				</div>
+            			</a>
+						<a target="_blank" href="https://www.linkedin.com/in/srsly12/">
+            				<div className="footer-button">
+                				<div className="linkedin-icon">
+                					<i class="fa fa-linkedin-square"></i>
+                				</div>
+
+            				</div>
+            			</a>
+						</div>
+						<p>Stephen Sy</p>
+					</div>
+					</div>
+				</div>
 		</div>
 	);
 }

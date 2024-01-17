@@ -241,3 +241,14 @@
 #num-reviews-text-detail {
 	color: white;
 }
+
+/* .res-details-map-container {
+	width: 100rem;
+	border: 1px solid red;
+} */
+
+@media screen and (max-width: 1025px) {
+	.res-details-map-container div {
+		width: 10vw;
+	}
+}

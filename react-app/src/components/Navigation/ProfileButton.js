@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "../../store/session";
 import OpenModalButton from "../OpenModalButton";
@@ -10,6 +10,7 @@ import "./Navigation.css";
 function ProfileButton({ user }) {
 	const dispatch = useDispatch();
 	const ulRef = useRef();
+	const history = useHistory()
 
 	const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
@@ -40,9 +41,8 @@ function ProfileButton({ user }) {
 		const amOrPm = hours >= 12 ? "PM" : "AM";
 		const formattedHours = hours % 12 || 12;
 
-		return `${formattedHours}:${minutes < 10 ? "0" : ""}${minutes}:${
-			seconds < 10 ? "0" : ""
-		}${seconds} ${amOrPm}`;
+		return `${formattedHours}:${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""
+			}${seconds} ${amOrPm}`;
 	}
 
 	function setActiveClass(e) {
@@ -54,6 +54,7 @@ function ProfileButton({ user }) {
 
 	const handleLogout = (e) => {
 		e.preventDefault();
+		history.push("/")
 		dispatch(logout());
 	};
 

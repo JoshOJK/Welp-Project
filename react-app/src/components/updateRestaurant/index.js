@@ -41,18 +41,6 @@ const UpdateForm = () => {
 
 	const key = useSelector((state) => state.maps.key);
 
-	// console.log(
-	// 	country,
-	// 	postalcode,
-	// 	address,
-	// 	city,
-	// 	state,
-	// 	lat,
-	// 	lng,
-	// 	"THIS IS DATA!",
-	// 	data
-	// );
-
 	useEffect(() => {
 		if (restaurant) {
 			setData({
@@ -145,9 +133,6 @@ const UpdateForm = () => {
 			};
 
 			try {
-				console.log(
-					Array.from(document.querySelectorAll("Autocomplete"))
-				);
 				dispatch(updateRestaurant(restaurantId, submitData)).then(
 					() => {
 						history.push(`/restaurants/${restaurantId}`);

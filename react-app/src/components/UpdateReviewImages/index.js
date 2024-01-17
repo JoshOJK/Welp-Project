@@ -31,9 +31,6 @@ function UpdateReviewImgFunc() {
 		}
 	}, [dispatch]);
 
-	console.log("THIS IS URL", url);
-	console.log("THIS IS IMAGE!", image);
-
 	const handleFileChange = (e) => {
 		const file = e.target.files[0];
 

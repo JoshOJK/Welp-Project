@@ -138,6 +138,7 @@ label {
 	justify-content: center;
 	align-items: center;
 	height: 99vh;
+	flex-direction: column;
 }
 
 .within-form-master-container {
