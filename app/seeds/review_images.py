@@ -2,6 +2,7 @@ from app.models import db, ReviewImage, environment, SCHEMA
 from sqlalchemy.sql import text
 
 
+
 # Adds a demo user, you can add other users here if you want
 def seed_review_images():
     image1 = ReviewImage(
@@ -19,31 +20,31 @@ def seed_review_images():
     image7 = ReviewImage(
         review_id=7, url='https://s3-media0.fl.yelpcdn.com/bphoto/Hw1utlYNMSqzu5cWklxYzw/348s.jpg')
     image8 = ReviewImage(
-        review_id=8, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=8, url='https://i.imgur.com/c8fm3iX.png')
     image9 = ReviewImage(
-        review_id=9, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=9, url='https://i.imgur.com/c8fm3iX.png')
     image10 = ReviewImage(
-        review_id=10, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=10, url='https://i.imgur.com/c8fm3iX.png')
     image11 = ReviewImage(
-        review_id=11, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=11, url='https://i.imgur.com/c8fm3iX.png')
     image12 = ReviewImage(
-        review_id=12, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=12, url='https://i.imgur.com/c8fm3iX.png')
     image13 = ReviewImage(
-        review_id=13, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=13, url='https://i.imgur.com/c8fm3iX.png')
     image14 = ReviewImage(
-        review_id=14, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=14, url='https://i.imgur.com/c8fm3iX.png')
     image15 = ReviewImage(
-        review_id=15, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=15, url='https://i.imgur.com/c8fm3iX.png')
     image16 = ReviewImage(
-        review_id=16, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=16, url='https://i.imgur.com/c8fm3iX.png')
     image17 = ReviewImage(
-        review_id=17, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=17, url='https://i.imgur.com/c8fm3iX.png')
     image18 = ReviewImage(
-        review_id=18, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=18, url='https://i.imgur.com/c8fm3iX.png')
     image19 = ReviewImage(
-        review_id=19, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=19, url='https://i.imgur.com/c8fm3iX.png')
     image20 = ReviewImage(
-        review_id=20, url='https://cdn.discordapp.com/attachments/1086898277728931870/1192304504880771093/DALLE_2024-01-03_21.12.10_-_A_hyper-realistic_image_of_a_platter_filled_with_a_wide_variety_of_delicious_foods._The_platter_should_include_an_array_of_colorful_and_appetizing_ite.png')
+        review_id=20, url='https://i.imgur.com/c8fm3iX.png')
 
     db.session.add(image1)
     db.session.add(image2)
