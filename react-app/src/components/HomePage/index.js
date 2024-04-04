@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
 import { fetchReviews } from "../../store/reviews";
 import { loadRestaurants } from "../../store/restaurants";
+import homePageButton from "../../Images/welp-home-button.png"
 import "./HomePage.css";
 
 const HomePage = () => {

@@ -5,6 +5,7 @@ import ProfileButton from "./ProfileButton";
 import { getAllRestaurants } from "../../store/allRestaurants";
 import TextField from "@mui/material/TextField";
 import { Autocomplete } from "@mui/material";
+import homePageButton from "../../Images/welp-home-button.png"
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -46,7 +47,7 @@ function Navigation({ isLoaded }) {
 					<NavLink exact to="/">
 						<img
 							className="home-button"
-							src="https://cdn.discordapp.com/attachments/1115823811116400650/1173012826823081994/welplogoblue.png?ex=65626853&is=654ff353&hm=8b8f03c5f6ae31ebecc250d240b6aacfbc65fd5e8e5a018851bffa6f935e8b86&"
+							src={homePageButton}
 							alt="home button"
 						></img>
 					</NavLink>
